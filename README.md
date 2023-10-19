@@ -34,5 +34,5 @@ El programa mostrará el grafo generado y, después de cerrar la ventana del gra
 
 ## Autor
 
-Este programa fue desarrollado por [github.com/Treborrr].
+Este programa fue desarrollado por [Treborrr](https://github.com/Treborrr).
 
