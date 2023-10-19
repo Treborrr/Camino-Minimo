@@ -17,7 +17,7 @@ pip install tkinter
 pip install networkx
 pip install matplotlib
 ```
-# Problema Planteado
+# Problema Propuesto 
 
 Dado 𝑛 ∈ [5, 15] ingresado por el usuario, el programa debe generaraleatoriamente una matriz simétrica 𝑛 × 𝑛 (con elementos positivos) o solicitar el ingreso de cada elemento de la matriz (según decisión delusuario). Además, debe mostrar el grafo etiquetado asociado a esta matrizy el camino mínimo que existe entre dos vértices seleccionados por elusuario.
 
@@ -31,9 +31,6 @@ Para ejecutar el programa, simplemente ejecuta el archivo `caminoMinimo.py`. Apa
 - **Generar Matriz Aleatoriamente**: Crea una matriz de adyacencia aleatoria con valores de peso limitados a un máximo de 30. La densidad de las conexiones aleatorias se puede ajustar.
 
 El programa mostrará el grafo generado y, después de cerrar la ventana del grafo, permitirá al usuario ingresar nodos de origen y destino para calcular el camino mínimo. Los resultados se mostrarán en la ventana inicial.
-
-## Personalizaciónff
-
 
 ## Autor
 
