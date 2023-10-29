@@ -32,7 +32,4 @@ Para ejecutar el programa, simplemente ejecuta el archivo `caminoMinimo.py`. Apa
 
 El programa mostrará el grafo generado y, después de cerrar la ventana del grafo, permitirá al usuario ingresar nodos de origen y destino para calcular el camino mínimo. Los resultados se mostrarán en la ventana inicial.
 
-## Autor
-
-Este programa fue desarrollado por [Treborrr](https://github.com/Treborrr).
 
