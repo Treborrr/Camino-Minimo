@@ -19,7 +19,7 @@ pip install matplotlib
 ```
 ## Problema Propuesto 
 
-Dado 𝑛 ∈ [5, 15] ingresado por el usuario, el programa debe generaraleatoriamente una matriz simétrica 𝑛 × 𝑛 (con elementos positivos) o solicitar el ingreso de cada elemento de la matriz (según decisión delusuario). Además, debe mostrar el grafo etiquetado asociado a esta matrizy el camino mínimo que existe entre dos vértices seleccionados por elusuario.
+Dado 𝑛 ∈ [5, 15] ingresado por el usuario, el programa debe generaraleatoriamente una matriz simétrica 𝑛 × 𝑛 (con elementos positivos) o solicitar el ingreso de cada elemento de la matriz (según decisión delusuario). Además, debe mostrar el grafo etiquetado asociado a esta matriz y el camino mínimo que existe entre dos vértices seleccionados por elusuario.
 
 
 ## Ejecución
