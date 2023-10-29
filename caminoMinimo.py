@@ -1,15 +1,43 @@
 import tkinter as tk
-from tkinter import messagebox, ttk, simpledialog
+from tkinter import messagebox, simpledialog
 import networkx as nx
 import random
 from matplotlib import pyplot as plt
 import matplotlib
 matplotlib.use('Qt5Agg')
 
-# Ventana principal
-app = tk.Tk()
-app.title("Problema del Camino Mínimo")
+camino_minimo_label = None
+longitud_camino_label = None
 
+# Función para mostrar la ventana de información
+def mostrar_informacion():
+    info_window = tk.Toplevel(app)
+    info_window.title("Información")
+    info_text = tk.Label(info_window, text="Este programa permite generar matrices simétricas aleatorias o ingresar los valores manualmente. Luego muestra el grafo etiquetado y el camino mínimo entre dos nodos.")
+    info_text.pack()
+    retroceder_button = tk.Button(info_window, text="Retroceder", command=info_window.destroy)
+    retroceder_button.pack()
+
+# Función para mostrar la ventana principal
+def mostrar_ventana_principal():
+    # Limpiar la ventana
+    for widget in app.winfo_children():
+        widget.destroy()
+
+    # Botones para generar matriz
+    generar_manual_button = tk.Button(app, text="Generar Matriz Manualmente", command=generar_matriz_manual)
+    generar_manual_button.pack(padx=10, pady=5)
+
+    generar_aleatorio_button = tk.Button(app, text="Generar Matriz Aleatoriamente", command=generar_matriz_aleatoria)
+    generar_aleatorio_button.pack(padx=10, pady=5)
+
+    global camino_minimo_label, longitud_camino_label
+    camino_minimo_label = tk.Label(app, text="")
+    longitud_camino_label = tk.Label(app, text="")
+    camino_minimo_label.pack()
+    longitud_camino_label.pack()
+
+# Función para generar matriz manualmente
 def generar_matriz_manual():
     n = simpledialog.askinteger("Ingresar n", "Ingrese n (entre 5 y 15):", parent=app)
     
@@ -31,11 +59,10 @@ def generar_matriz_manual():
                     peso = simpledialog.askinteger(f"Ingrese el peso para ({i}, {j})", f"Ingrese el peso para ({i}, {j}):", parent=app)
                     matriz[i][j] = peso
                     matriz[j][i] = peso
-                else:
-                    matriz[i][j] = matriz[j][i]
     
     mostrar_grafo(matriz)
 
+# Función para generar matriz aleatoria
 def generar_matriz_aleatoria():
     n = simpledialog.askinteger("Ingresar n", "Ingrese n (entre 5 y 15):", parent=app)
     
@@ -60,14 +87,16 @@ def generar_matriz_aleatoria():
     
     mostrar_grafo(matriz)
 
+# Función para mostrar el grafo y el camino mínimo
 def mostrar_grafo(matriz):
+    global camino_minimo_label, longitud_camino_label
+    
     G = nx.Graph()
     for i in range(len(matriz)):
         for j in range(i + 1, len(matriz)):
             if matriz[i][j] > 0:
                 G.add_edge(i, j, weight=matriz[i][j])
 
-    # Mostrar el grafo de manera gráfica
     pos = nx.spring_layout(G)
     labels = nx.get_edge_attributes(G, 'weight')
     nx.draw(G, pos, with_labels=True, node_size=3000, node_color="skyblue", font_size=10)
@@ -89,19 +118,19 @@ def mostrar_grafo(matriz):
     except nx.NetworkXNoPath:
         messagebox.showerror("Error", "No hay un camino entre los nodos de origen y destino.")
 
-# Botones para generar matriz
-generar_manual_button = tk.Button(app, text="Ingresar Matriz Manualmente", command=generar_matriz_manual)
-generar_manual_button.pack()
+# Ventana principal
+app = tk.Tk()
+app.title("Problema del Camino Mínimo")
+app.geometry("800x600")
 
-generar_aleatorio_button = tk.Button(app, text="Generar Matriz Aleatoriamente", command=generar_matriz_aleatoria)
-generar_aleatorio_button.pack()
+# Botones en la ventana principal
+iniciar_button = tk.Button(app, text="Iniciar", command=mostrar_ventana_principal)
+iniciar_button.pack(padx=1, pady=4)
 
-# Etiquetas para mostrar resultados
-camino_minimo_label = tk.Label(app, text="")
-camino_minimo_label.pack()
+informacion_button = tk.Button(app, text="Información", command=mostrar_informacion)
+informacion_button.pack(padx=1, pady=5)
 
-longitud_camino_label = tk.Label(app, text="")
-longitud_camino_label.pack()
+salir_button = tk.Button(app, text="Salir", command=app.quit)
+salir_button.pack(padx=6, pady=6)
 
 app.mainloop()
-
