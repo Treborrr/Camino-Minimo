@@ -13,7 +13,27 @@ longitud_camino_label = None
 def mostrar_informacion():
     info_window = tk.Toplevel(app)
     info_window.title("Información")
-    info_text = tk.Label(info_window, text="Este programa permite generar matrices simétricas aleatorias o ingresar los valores manualmente. Luego muestra el grafo etiquetado y el camino mínimo entre dos nodos.")
+    info_text = tk.Label(info_window, text="""
+    Instrucciones de Uso:
+
+    1. Para generar una matriz manualmente:
+       - Haz clic en el botón "Generar Matriz Manualmente".
+       - Ingresa el valor de "n" (tamaño de la matriz) en el cuadro de diálogo.
+       - Ingresa los pesos de las aristas en la matriz cuadrada.
+       - El programa generará un grafo y te pedirá que ingreses un nodo de origen y un nodo de destino para encontrar el camino mínimo.
+
+    2. Para generar una matriz aleatoriamente:
+       - Haz clic en el botón "Generar Matriz Aleatoriamente".
+       - Ingresa el valor de "n" (tamaño de la matriz) en el cuadro de diálogo.
+       - El programa generará una matriz de adyacencia con valores aleatorios y mostrará el grafo resultante.
+       - Te pedirá que ingreses un nodo de origen y un nodo de destino para encontrar el camino mínimo.
+
+    3. Para encontrar el camino mínimo:
+       - Después de generar una matriz, ingresa el nodo de origen y el nodo de destino en los cuadros de diálogo que aparezcan.
+       - El programa calculará el camino mínimo y mostrará el resultado en la ventana principal.
+
+    ¡Disfruta explorando el problema del camino mínimo!
+    """)
     info_text.pack()
     retroceder_button = tk.Button(info_window, text="Retroceder", command=info_window.destroy)
     retroceder_button.pack()
