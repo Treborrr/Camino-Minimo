@@ -28,7 +28,7 @@ Para ejecutar el programa, simplemente ejecuta el archivo `caminoMinimo.py`. Apa
 
 - **Ingresar Matriz Manualmente**: Permite al usuario ingresar manualmente los valores de la matriz de adyacencia del grafo. Se proporciona una forma sencilla de ingresar valores simétricos.
 
-- **Generar Matriz Aleatoriamente**: Crea una matriz de adyacencia aleatoria con valores de peso limitados a un máximo de 30. La densidad de las conexiones aleatorias se puede ajustar.
+- **Generar Matriz Aleatoriamente**: Crea una matriz de adyacencia aleatoria con valores de peso limitados a un máximo de 30. La densidad de las conexiones aleatorias se puede ajustar(code).
 
 El programa mostrará el grafo generado y, después de cerrar la ventana del grafo, permitirá al usuario ingresar nodos de origen y destino para calcular el camino mínimo. Los resultados se mostrarán en la ventana inicial.
 
